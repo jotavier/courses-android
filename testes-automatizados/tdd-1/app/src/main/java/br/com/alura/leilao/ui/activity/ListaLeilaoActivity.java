@@ -10,7 +10,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import br.com.alura.leilao.R;
+import br.com.alura.leilao.model.Lance;
 import br.com.alura.leilao.model.Leilao;
+import br.com.alura.leilao.model.Usuario;
 import br.com.alura.leilao.ui.recyclerview.adapter.ListaLeilaoAdapter;
 
 public class ListaLeilaoActivity extends AppCompatActivity {
@@ -34,8 +36,20 @@ public class ListaLeilaoActivity extends AppCompatActivity {
 
     private List<Leilao> leiloesDeExemplo() {
         Leilao console = new Leilao("Console");
+        console.propoe(new Lance(new Usuario("Alex"), 200.0));
+        console.propoe(new Lance(new Usuario("Fran"), 300.0));
+
+        Leilao computador = new Leilao("Computador");
+        console.propoe(new Lance(new Usuario("João"), 1000.0));
+
+        Leilao carro = new Leilao("Carro");
+        console.propoe(new Lance(new Usuario("Joana"), 10000.0));
+        console.propoe(new Lance(new Usuario("Maria"), 15000.0));
+        console.propoe(new Lance(new Usuario("Ana"), 17000.0));
         return new ArrayList<>(Arrays.asList(
-                console
+                console,
+                computador,
+                carro
         ));
     }
 
